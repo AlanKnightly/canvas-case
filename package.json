@@ -6,6 +6,10 @@
   "author": "AlanKnightly <527239109@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/polyfill": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -31,7 +35,8 @@
     "test": "nodemon index.js",
     "start": "pm2 start index.js --watch",
     "stop": "pm2 stop all",
-    "restart": "pm2 restart index.js"
+    "restart": "pm2 restart index.js",
+    "cmp-js": "./node_modules/.bin/babel src --out-dir static"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
