@@ -2,6 +2,8 @@ var gulp = require("gulp");
 var babel = require("gulp-babel");
 var uglify = require("gulp-uglify");
 var postcss = require("gulp-postcss");
+var autoprefixer = require("autoprefixer");
+var cssnano = require("cssnano");
 
 function jsTask(cb) {
   return gulp
@@ -16,7 +18,8 @@ function jsTask(cb) {
   cb();
 }
 function cssTask(cb) {
-  return gulp.src("src/*.css").pipe(postcss()).pipe(gulp.dest("static"));
+  var plugins = [autoprefixer({}), cssnano()];
+  return gulp.src("src/*.css").pipe(postcss(plugins)).pipe(gulp.dest("static"));
   cb();
 }
 
