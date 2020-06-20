@@ -48,8 +48,8 @@
                       id="img-rotate"
                       placeholder=" 旋转角度"
                       value="0"
-                      min="-360"
-                      max="360"
+                      min="-360000"
+                      max="360000"
                     />
                   </label>
                 </li>
@@ -111,8 +111,8 @@
                       id="clip-rotate"
                       placeholder=" 旋转角度"
                       value="0"
-                      min="-360"
-                      max="360"
+                      min="-360000"
+                      max="360000"
                     />
                   </label>
                 </li>
@@ -153,6 +153,9 @@
           </section>
           <p class="tips">
             ps: 图片/裁剪框旋转后左上角为参考点， 图案无重叠将输出将是空白
+          </p>
+          <p class="tips">
+            旋转范围限制在[-360000～360000]
           </p>
         </div>
       </section>
