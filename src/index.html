@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h4>Canvas 基础api实践 ———— 绘图 输出相交图案</h4>
+      </header>
+      <section class="canvas-editor clearfix">
+        <div class="preview">
+          <canvas id="canvas" width="300" height="300">
+            当前浏览器不支持canvas哦
+          </canvas>
+        </div>
+        <div class="control">
+          <div class="clearfix">
+            <section class="img-params">
+              <h4 class="title">`图片参数控制：</h4>
+              <ul>
+                <li>
+                  <label for="img-width">
+                    图片宽度(px)：
+                    <input
+                      type="number"
+                      id="img-width"
+                      placeholder="图片宽度"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="img-height">
+                    图片高度(px)：<input
+                      type="number"
+                      id="img-height"
+                      placeholder="图片高度"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="img-rotate">
+                    旋转角度：<input
+                      type="number"
+                      id="img-rotate"
+                      placeholder=" 旋转角度"
+                      value="0"
+                      min="-360"
+                      max="360"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="img-x">
+                    参考点距左边：<input
+                      type="number"
+                      id="img-x"
+                      placeholder="距离左边"
+                      value="0"
+                      min="0"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="img-x">
+                    参考点距顶部：<input
+                      type="number"
+                      id="img-y"
+                      placeholder="距离顶部"
+                      value="0"
+                      min="0"
+                    />
+                  </label>
+                </li>
+              </ul>
+            </section>
+            <section class="clip-params">
+              <h4 class="title">裁剪框参数控制</h4>
+              <ul>
+                <li>
+                  <label for="clip-width">
+                    裁剪宽度(px)：
+
+                    <input
+                      type="number"
+                      id="clip-width"
+                      placeholder="图片宽度"
+                      value="200"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="clip-height">
+                    裁剪高度(px)：
+
+                    <input
+                      type="number"
+                      id="clip-height"
+                      placeholder="图片宽度"
+                      value="200"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="clip-rotate">
+                    旋转角度：<input
+                      type="number"
+                      id="clip-rotate"
+                      placeholder=" 旋转角度"
+                      value="0"
+                      min="-360"
+                      max="360"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="clip-x">
+                    参考点距左边：<input
+                      type="number"
+                      id="clip-x"
+                      placeholder="距离左边"
+                      value="0"
+                      min="0"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label for="clip-x">
+                    参考点距顶部：<input
+                      type="number"
+                      id="clip-y"
+                      placeholder="距离顶部"
+                      value="0"
+                      min="0"
+                    />
+                  </label>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <section class="buttons clearfix">
+            <input
+              id="imgSelector"
+              type="file"
+              name="myImage"
+              accept="image/*"
+            />
+            <span id="reset" class="button">恢复</span>
+            <span id="confirm" class="button">确定</span>
+          </section>
+          <p class="tips">
+            ps: 图片/裁剪框旋转后左上角为参考点， 图案无重叠将输出将是空白
+          </p>
+        </div>
+      </section>
+
+      <section class="output-img">
+        <h4 class="title">输出结果(将显示最新6张,左上角图片为最新)：</h4>
+        <div id="output"></div>
+      </section>
+    </div>
+    <script src="/static/index.js"></script>
+  </body>
+</html>
