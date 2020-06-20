@@ -27,7 +27,7 @@ function cssTask() {
 }
 
 exports.css = gulp.task("updateCss", function () {
-  return gulp.watch(["src/*.css"], cssTask);
+  return gulp.watch(["src/*.css,src/*.html"], gulp.parallel(htmlTask, cssTask));
 });
 
 exports.default = gulp.parallel(htmlTask, cssTask, jsTask);
