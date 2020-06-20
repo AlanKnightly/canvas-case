@@ -20,9 +20,14 @@ function jsTask() {
     .pipe(uglify())
     .pipe(gulp.dest("dist"));
 }
+
 function cssTask() {
   var plugins = [autoprefixer({}), cssnano()];
   return gulp.src("src/*.css").pipe(postcss(plugins)).pipe(gulp.dest("dist"));
 }
+
+exports.css = gulp.task("updateCss", function () {
+  return gulp.watch(["src/*.css"], cssTask);
+});
 
 exports.default = gulp.parallel(htmlTask, cssTask, jsTask);

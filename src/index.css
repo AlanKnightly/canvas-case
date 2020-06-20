@@ -39,6 +39,16 @@ header {
   height: 38px;
   line-height: 38px;
 }
+.control li label {
+  display: inline-block;
+  width: 120px;
+}
+.control li input {
+  width: 150px;
+  height: 26px;
+  line-height: 26px;
+  text-indent: 4px;
+}
 .control .buttons {
   margin-top: 18px;
   padding-right: 28px;
