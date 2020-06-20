@@ -5,7 +5,11 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
 
-function jsTask(cb) {
+function htmlTask() {
+  return gulp.src("src/index.html").pipe(gulp.dest("dist"));
+}
+
+function jsTask() {
   return gulp
     .src("src/index.js")
     .pipe(
@@ -14,13 +18,11 @@ function jsTask(cb) {
       })
     )
     .pipe(uglify())
-    .pipe(gulp.dest("static"));
-  cb();
+    .pipe(gulp.dest("dist"));
 }
-function cssTask(cb) {
+function cssTask() {
   var plugins = [autoprefixer({}), cssnano()];
-  return gulp.src("src/*.css").pipe(postcss(plugins)).pipe(gulp.dest("static"));
-  cb();
+  return gulp.src("src/*.css").pipe(postcss(plugins)).pipe(gulp.dest("dist"));
 }
 
-exports.default = gulp.parallel(cssTask, jsTask);
+exports.default = gulp.parallel(htmlTask, cssTask, jsTask);
