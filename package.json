@@ -18,6 +18,12 @@
     "express-session": "^1.17.0",
     "forever": "^2.0.0",
     "github-webhook-handler": "^1.0.0",
+    "global": "^4.4.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-uglify": "^3.0.2",
     "helmet": "^3.21.3",
     "jsonwebtoken": "^8.5.1",
     "jws": "^4.0.0",
@@ -35,8 +41,7 @@
     "test": "nodemon index.js",
     "start": "pm2 start index.js --watch",
     "stop": "pm2 stop all",
-    "restart": "pm2 restart index.js",
-    "cmp-js": "./node_modules/.bin/babel src --out-dir static"
+    "restart": "pm2 restart index.js"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -47,10 +52,5 @@
     "husky": ">=4",
     "lint-staged": ">=10",
     "prettier": "2.0.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
