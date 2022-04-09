@@ -29,7 +29,7 @@
     "helmet": "^3.21.3",
     "jsonwebtoken": "^8.5.1",
     "jws": "^4.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.28",
     "mongoose": "^5.9.6",
     "morgan": "^1.10.0",
